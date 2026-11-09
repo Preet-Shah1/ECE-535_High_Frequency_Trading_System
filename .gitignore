@@ -1,0 +1,24 @@
+# Quartus generated files
+**/db/
+**/incremental_db/
+**/output_files/
+**/simulation/
+**/.qsys_edit/
+**/greybox_tmp/
+
+# temp files
+*.rpt
+*.smsg
+*.summary
+*.done
+*.jdi
+*.qws
+*.bak
+*.tmp
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor
+.vscode/
