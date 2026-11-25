@@ -1,0 +1,297 @@
+# DE1-SoC board HPS pin assignments adapted from Terasic DE1-SoC OpenCL BSP top.qsf
+# Adapted to generated hft_hps_system.v top-level port names.
+# Review against your board revision, verify I/O bank standards, and run Fitter before programming.
+# Not a replacement for DDR PHY constraints or HPS bootloader handoff.
+
+set_location_assignment PIN_A24 -to peripheral_hps_io_gpio_inst_GPIO53
+set_location_assignment PIN_E21 -to peripheral_hps_io_emac1_inst_MDIO
+set_location_assignment PIN_B21 -to peripheral_hps_io_emac1_inst_MDC
+set_location_assignment PIN_A20 -to peripheral_hps_io_emac1_inst_TX_CTL
+set_location_assignment PIN_H19 -to peripheral_hps_io_emac1_inst_TX_CLK
+set_location_assignment PIN_F20 -to peripheral_hps_io_emac1_inst_TXD0
+set_location_assignment PIN_J19 -to peripheral_hps_io_emac1_inst_TXD1
+set_location_assignment PIN_F21 -to peripheral_hps_io_emac1_inst_TXD2
+set_location_assignment PIN_F19 -to peripheral_hps_io_emac1_inst_TXD3
+set_location_assignment PIN_K17 -to peripheral_hps_io_emac1_inst_RX_CTL
+set_location_assignment PIN_G20 -to peripheral_hps_io_emac1_inst_RX_CLK
+set_location_assignment PIN_A21 -to peripheral_hps_io_emac1_inst_RXD0
+set_location_assignment PIN_B20 -to peripheral_hps_io_emac1_inst_RXD1
+set_location_assignment PIN_B18 -to peripheral_hps_io_emac1_inst_RXD2
+set_location_assignment PIN_D21 -to peripheral_hps_io_emac1_inst_RXD3
+set_location_assignment PIN_E16 -to peripheral_hps_io_usb1_inst_D0
+set_location_assignment PIN_G16 -to peripheral_hps_io_usb1_inst_D1
+set_location_assignment PIN_D16 -to peripheral_hps_io_usb1_inst_D2
+set_location_assignment PIN_D14 -to peripheral_hps_io_usb1_inst_D3
+set_location_assignment PIN_A15 -to peripheral_hps_io_usb1_inst_D4
+set_location_assignment PIN_C14 -to peripheral_hps_io_usb1_inst_D5
+set_location_assignment PIN_D15 -to peripheral_hps_io_usb1_inst_D6
+set_location_assignment PIN_M17 -to peripheral_hps_io_usb1_inst_D7
+set_location_assignment PIN_N16 -to peripheral_hps_io_usb1_inst_CLK
+set_location_assignment PIN_C15 -to peripheral_hps_io_usb1_inst_STP
+set_location_assignment PIN_E14 -to peripheral_hps_io_usb1_inst_DIR
+set_location_assignment PIN_A14 -to peripheral_hps_io_usb1_inst_NXT
+set_location_assignment PIN_F18 -to peripheral_hps_io_sdio_inst_CMD
+set_location_assignment PIN_A16 -to peripheral_hps_io_sdio_inst_CLK
+set_location_assignment PIN_G18 -to peripheral_hps_io_sdio_inst_D0
+set_location_assignment PIN_C17 -to peripheral_hps_io_sdio_inst_D1
+set_location_assignment PIN_D17 -to peripheral_hps_io_sdio_inst_D2
+set_location_assignment PIN_B16 -to peripheral_hps_io_sdio_inst_D3
+set_location_assignment PIN_B25 -to peripheral_hps_io_uart0_inst_RX
+set_location_assignment PIN_C25 -to peripheral_hps_io_uart0_inst_TX
+set_location_assignment PIN_E23 -to peripheral_hps_io_i2c0_inst_SCL
+set_location_assignment PIN_C24 -to peripheral_hps_io_i2c0_inst_SDA
+set_location_assignment PIN_F26 -to memory_mem_a[0]
+set_location_assignment PIN_G30 -to memory_mem_a[1]
+set_location_assignment PIN_F28 -to memory_mem_a[2]
+set_location_assignment PIN_F30 -to memory_mem_a[3]
+set_location_assignment PIN_J25 -to memory_mem_a[4]
+set_location_assignment PIN_J27 -to memory_mem_a[5]
+set_location_assignment PIN_F29 -to memory_mem_a[6]
+set_location_assignment PIN_E28 -to memory_mem_a[7]
+set_location_assignment PIN_H27 -to memory_mem_a[8]
+set_location_assignment PIN_G26 -to memory_mem_a[9]
+set_location_assignment PIN_D29 -to memory_mem_a[10]
+set_location_assignment PIN_C30 -to memory_mem_a[11]
+set_location_assignment PIN_B30 -to memory_mem_a[12]
+set_location_assignment PIN_C29 -to memory_mem_a[13]
+set_location_assignment PIN_H25 -to memory_mem_a[14]
+set_location_assignment PIN_E29 -to memory_mem_ba[0]
+set_location_assignment PIN_J24 -to memory_mem_ba[1]
+set_location_assignment PIN_J23 -to memory_mem_ba[2]
+set_location_assignment PIN_M23 -to memory_mem_ck
+set_location_assignment PIN_L23 -to memory_mem_ck_n
+set_location_assignment PIN_L29 -to memory_mem_cke
+set_location_assignment PIN_H24 -to memory_mem_cs_n
+set_location_assignment PIN_D30 -to memory_mem_ras_n
+set_location_assignment PIN_E27 -to memory_mem_cas_n
+set_location_assignment PIN_C28 -to memory_mem_we_n
+set_location_assignment PIN_P30 -to memory_mem_reset_n
+set_location_assignment PIN_K23 -to memory_mem_dq[0]
+set_location_assignment PIN_K22 -to memory_mem_dq[1]
+set_location_assignment PIN_H30 -to memory_mem_dq[2]
+set_location_assignment PIN_G28 -to memory_mem_dq[3]
+set_location_assignment PIN_L25 -to memory_mem_dq[4]
+set_location_assignment PIN_L24 -to memory_mem_dq[5]
+set_location_assignment PIN_J30 -to memory_mem_dq[6]
+set_location_assignment PIN_J29 -to memory_mem_dq[7]
+set_location_assignment PIN_K26 -to memory_mem_dq[8]
+set_location_assignment PIN_L26 -to memory_mem_dq[9]
+set_location_assignment PIN_K29 -to memory_mem_dq[10]
+set_location_assignment PIN_K27 -to memory_mem_dq[11]
+set_location_assignment PIN_M26 -to memory_mem_dq[12]
+set_location_assignment PIN_M27 -to memory_mem_dq[13]
+set_location_assignment PIN_L28 -to memory_mem_dq[14]
+set_location_assignment PIN_M30 -to memory_mem_dq[15]
+set_location_assignment PIN_U26 -to memory_mem_dq[16]
+set_location_assignment PIN_T26 -to memory_mem_dq[17]
+set_location_assignment PIN_N29 -to memory_mem_dq[18]
+set_location_assignment PIN_N28 -to memory_mem_dq[19]
+set_location_assignment PIN_P26 -to memory_mem_dq[20]
+set_location_assignment PIN_P27 -to memory_mem_dq[21]
+set_location_assignment PIN_N27 -to memory_mem_dq[22]
+set_location_assignment PIN_R29 -to memory_mem_dq[23]
+set_location_assignment PIN_P24 -to memory_mem_dq[24]
+set_location_assignment PIN_P25 -to memory_mem_dq[25]
+set_location_assignment PIN_T29 -to memory_mem_dq[26]
+set_location_assignment PIN_T28 -to memory_mem_dq[27]
+set_location_assignment PIN_R27 -to memory_mem_dq[28]
+set_location_assignment PIN_R26 -to memory_mem_dq[29]
+set_location_assignment PIN_V30 -to memory_mem_dq[30]
+set_location_assignment PIN_W29 -to memory_mem_dq[31]
+set_location_assignment PIN_N18 -to memory_mem_dqs[0]
+set_location_assignment PIN_N25 -to memory_mem_dqs[1]
+set_location_assignment PIN_R19 -to memory_mem_dqs[2]
+set_location_assignment PIN_R22 -to memory_mem_dqs[3]
+set_location_assignment PIN_M19 -to memory_mem_dqs_n[0]
+set_location_assignment PIN_N24 -to memory_mem_dqs_n[1]
+set_location_assignment PIN_R18 -to memory_mem_dqs_n[2]
+set_location_assignment PIN_R21 -to memory_mem_dqs_n[3]
+set_location_assignment PIN_H28 -to memory_mem_odt
+set_location_assignment PIN_K28 -to memory_mem_dm[0]
+set_location_assignment PIN_M28 -to memory_mem_dm[1]
+set_location_assignment PIN_R28 -to memory_mem_dm[2]
+set_location_assignment PIN_W30 -to memory_mem_dm[3]
+set_location_assignment PIN_D27 -to memory_oct_rzqin
+
+# HPS peripheral/DDR I/O standards based on Terasic reference
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_oct_rzqin
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[0]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[1]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[2]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[3]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[4]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[5]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[6]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[7]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[8]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[9]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[10]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[11]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[12]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[13]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[14]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[15]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[16]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[17]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[18]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[19]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[20]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[21]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[22]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[23]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[24]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[25]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[26]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[27]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[28]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[29]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[30]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[31]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_dqs[0]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_dqs[1]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_dqs[2]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_dqs[3]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_dqs_n[0]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_dqs_n[1]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_dqs_n[2]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_dqs_n[3]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_ck
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_ck_n
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[0]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[10]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[11]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[12]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[13]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[14]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[1]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[2]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[3]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[4]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[5]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[6]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[7]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[8]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[9]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_ba[0]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_ba[1]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_ba[2]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_cas_n
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_cke
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_cs_n
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_odt
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_ras_n
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_we_n
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_reset_n
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dm[0]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dm[1]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dm[2]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dm[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_gpio_inst_GPIO53
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_emac1_inst_MDIO
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_emac1_inst_MDC
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_emac1_inst_TX_CTL
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_emac1_inst_TX_CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_emac1_inst_TXD0
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_emac1_inst_TXD1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_emac1_inst_TXD2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_emac1_inst_TXD3
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_emac1_inst_RX_CTL
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_emac1_inst_RX_CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_emac1_inst_RXD0
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_emac1_inst_RXD1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_emac1_inst_RXD2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_emac1_inst_RXD3
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_usb1_inst_D0
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_usb1_inst_D1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_usb1_inst_D2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_usb1_inst_D3
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_usb1_inst_D4
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_usb1_inst_D5
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_usb1_inst_D6
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_usb1_inst_D7
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_usb1_inst_CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_usb1_inst_STP
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_usb1_inst_DIR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_usb1_inst_NXT
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_sdio_inst_CMD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_sdio_inst_CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_sdio_inst_D0
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_sdio_inst_D1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_sdio_inst_D2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_sdio_inst_D3
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_uart0_inst_RX
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_uart0_inst_TX
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_i2c0_inst_SCL
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to peripheral_hps_io_i2c0_inst_SDA
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[0]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[1]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[2]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[3]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[4]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[5]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[6]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[7]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[8]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[9]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[10]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[11]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[12]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[13]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_a[14]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_ba[0]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_ba[1]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_ba[2]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_ck
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_ck_n
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_cke
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_cs_n
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_ras_n
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_cas_n
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_we_n
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_reset_n
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[0]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[1]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[2]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[3]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[4]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[5]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[6]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[7]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[8]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[9]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[10]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[11]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[12]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[13]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[14]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[15]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[16]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[17]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[18]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[19]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[20]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[21]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[22]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[23]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[24]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[25]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[26]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[27]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[28]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[29]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[30]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dq[31]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_dqs[0]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_dqs[1]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_dqs[2]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_dqs[3]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_dqs_n[0]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_dqs_n[1]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_dqs_n[2]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to memory_mem_dqs_n[3]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_odt
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dm[0]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dm[1]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dm[2]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_mem_dm[3]
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to memory_oct_rzqin
