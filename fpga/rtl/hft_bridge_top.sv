@@ -69,6 +69,10 @@ module hft_bridge_top (
     reg last_request;
     reg request_inflight;
     reg pending;
+	 
+	 // FPGA hardware latency measurement
+	 reg [31:0] cycle_counter;
+	 reg [31:0] last_cycles;
 
     wire start_request = (request_toggle != last_request) && !pending;
 
@@ -83,26 +87,55 @@ module hft_bridge_top (
 
     // Each change of control_pio starts one transaction.
     // A completion toggle is only published after the decision is latched.
-    always @(posedge CLOCK_50 or negedge KEY0_N) begin
-        if (!KEY0_N) begin
-            last_request      <= 1'b0;
-            request_inflight  <= 1'b0;
-            pending           <= 1'b0;
-            completion_toggle <= 1'b0;
-            decision_latched  <= 2'b00;
-        end else begin
-            if (start_request) begin
-                last_request     <= request_toggle;
-                request_inflight <= request_toggle;
-                pending          <= 1'b1;
-            end
-            if (pending && decision_valid) begin
-                decision_latched  <= decision;
-                completion_toggle <= request_inflight;
-                pending           <= 1'b0;
-            end
-        end
-    end
+    
+	always @(posedge CLOCK_50 or negedge KEY0_N) begin
+
+		 if (!KEY0_N) begin
+
+			  last_request      <= 1'b0;
+			  request_inflight  <= 1'b0;
+			  pending           <= 1'b0;
+			  completion_toggle <= 1'b0;
+			  decision_latched  <= 2'b00;
+
+			  cycle_counter     <= 32'd0;
+			  last_cycles       <= 32'd0;
+
+		 end else begin
+
+			  // New transaction detected
+			  if (start_request) begin
+
+					last_request     <= request_toggle;
+					request_inflight <= request_toggle;
+					pending          <= 1'b1;
+
+					// Start timing at request acceptance
+					cycle_counter <= 32'd0;
+
+			  end
+
+			  // Count cycles while transaction is pending
+			  if (pending) begin
+
+					cycle_counter <= cycle_counter + 32'd1;
+
+					// Trading engine has produced a decision
+					if (decision_valid) begin
+
+						 decision_latched <= decision;
+
+						 // Capture completed transaction latency
+						 last_cycles <= cycle_counter + 32'd1;
+
+						 completion_toggle <= request_inflight;
+						 pending <= 1'b0;
+
+					end
+			  end
+		 end
+	end
+
 
     hft_hps_system u_hps_system (
         .config_clk_clk        (CLOCK_50),
@@ -111,6 +144,7 @@ module hft_bridge_top (
         .control_export_export (request_toggle),
         .decision_export_export(decision_latched),
         .status_export_export  (completion_toggle),
+		  .cycles_export_export  (last_cycles),
         .memory_mem_a(memory_mem_a),
         .memory_mem_ba(memory_mem_ba),
         .memory_mem_ck(memory_mem_ck),

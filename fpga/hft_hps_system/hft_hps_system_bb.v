@@ -58,7 +58,8 @@ module hft_hps_system (
 	peripheral_hps_io_i2c0_inst_SCL,
 	peripheral_hps_io_gpio_inst_GPIO53,
 	price_export_export,
-	status_export_export);	
+	status_export_export,
+	cycles_export_export);	
 
 	input		config_clk_clk;
 	output		control_export_export;
@@ -119,4 +120,5 @@ module hft_hps_system (
 	inout		peripheral_hps_io_gpio_inst_GPIO53;
 	output	[15:0]	price_export_export;
 	input		status_export_export;
+	input	[31:0]	cycles_export_export;
 endmodule

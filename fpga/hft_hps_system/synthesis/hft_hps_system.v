@@ -6,6 +6,7 @@
 module hft_hps_system (
 		input  wire        config_clk_clk,                      //      config_clk.clk
 		output wire        control_export_export,               //  control_export.export
+		input  wire [31:0] cycles_export_export,                //   cycles_export.export
 		input  wire [1:0]  decision_export_export,              // decision_export.export
 		input  wire        reset_n,                             //    global_reset.reset_n
 		output wire [14:0] memory_mem_a,                        //          memory.mem_a
@@ -115,9 +116,11 @@ module hft_hps_system (
 	wire  [31:0] mm_interconnect_0_control_pio_s1_writedata;  // mm_interconnect_0:control_pio_s1_writedata -> control_pio:writedata
 	wire  [31:0] mm_interconnect_0_status_pio_s1_readdata;    // status_pio:readdata -> mm_interconnect_0:status_pio_s1_readdata
 	wire   [1:0] mm_interconnect_0_status_pio_s1_address;     // mm_interconnect_0:status_pio_s1_address -> status_pio:address
+	wire  [31:0] mm_interconnect_0_cycles_pio_s1_readdata;    // cycles_pio:readdata -> mm_interconnect_0:cycles_pio_s1_readdata
+	wire   [1:0] mm_interconnect_0_cycles_pio_s1_address;     // mm_interconnect_0:cycles_pio_s1_address -> cycles_pio:address
 	wire  [31:0] hps_f2h_irq0_irq;                            // irq_mapper:sender_irq -> hps:f2h_irq_p0
 	wire  [31:0] hps_f2h_irq1_irq;                            // irq_mapper_001:sender_irq -> hps:f2h_irq_p1
-	wire         rst_controller_reset_out_reset;              // rst_controller:reset_out -> [control_pio:reset_n, decision_pio:reset_n, mm_interconnect_0:price_pio_reset_reset_bridge_in_reset_reset, price_pio:reset_n, status_pio:reset_n]
+	wire         rst_controller_reset_out_reset;              // rst_controller:reset_out -> [control_pio:reset_n, cycles_pio:reset_n, decision_pio:reset_n, mm_interconnect_0:price_pio_reset_reset_bridge_in_reset_reset, price_pio:reset_n, status_pio:reset_n]
 	wire         rst_controller_001_reset_out_reset;          // rst_controller_001:reset_out -> mm_interconnect_0:hps_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset
 	wire         hps_h2f_reset_reset;                         // hps:h2f_rst_n -> rst_controller_001:reset_in0
 
@@ -130,6 +133,14 @@ module hft_hps_system (
 		.chipselect (mm_interconnect_0_control_pio_s1_chipselect), //                    .chipselect
 		.readdata   (mm_interconnect_0_control_pio_s1_readdata),   //                    .readdata
 		.out_port   (control_export_export)                        // external_connection.export
+	);
+
+	hft_hps_system_cycles_pio cycles_pio (
+		.clk      (config_clk_clk),                           //                 clk.clk
+		.reset_n  (~rst_controller_reset_out_reset),          //               reset.reset_n
+		.address  (mm_interconnect_0_cycles_pio_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_0_cycles_pio_s1_readdata), //                    .readdata
+		.in_port  (cycles_export_export)                      // external_connection.export
 	);
 
 	hft_hps_system_decision_pio decision_pio (
@@ -303,6 +314,8 @@ module hft_hps_system (
 		.control_pio_s1_readdata                                           (mm_interconnect_0_control_pio_s1_readdata),   //                                                            .readdata
 		.control_pio_s1_writedata                                          (mm_interconnect_0_control_pio_s1_writedata),  //                                                            .writedata
 		.control_pio_s1_chipselect                                         (mm_interconnect_0_control_pio_s1_chipselect), //                                                            .chipselect
+		.cycles_pio_s1_address                                             (mm_interconnect_0_cycles_pio_s1_address),     //                                               cycles_pio_s1.address
+		.cycles_pio_s1_readdata                                            (mm_interconnect_0_cycles_pio_s1_readdata),    //                                                            .readdata
 		.decision_pio_s1_address                                           (mm_interconnect_0_decision_pio_s1_address),   //                                             decision_pio_s1.address
 		.decision_pio_s1_readdata                                          (mm_interconnect_0_decision_pio_s1_readdata),  //                                                            .readdata
 		.price_pio_s1_address                                              (mm_interconnect_0_price_pio_s1_address),      //                                                price_pio_s1.address

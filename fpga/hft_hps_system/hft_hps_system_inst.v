@@ -57,6 +57,7 @@
 		.peripheral_hps_io_i2c0_inst_SCL     (<connected-to-peripheral_hps_io_i2c0_inst_SCL>),     //                .hps_io_i2c0_inst_SCL
 		.peripheral_hps_io_gpio_inst_GPIO53  (<connected-to-peripheral_hps_io_gpio_inst_GPIO53>),  //                .hps_io_gpio_inst_GPIO53
 		.price_export_export                 (<connected-to-price_export_export>),                 //    price_export.export
-		.status_export_export                (<connected-to-status_export_export>)                 //   status_export.export
+		.status_export_export                (<connected-to-status_export_export>),                //   status_export.export
+		.cycles_export_export                (<connected-to-cycles_export_export>)                 //   cycles_export.export
 	);
 

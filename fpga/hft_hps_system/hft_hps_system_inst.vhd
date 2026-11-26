@@ -58,7 +58,8 @@
 			peripheral_hps_io_i2c0_inst_SCL     : inout std_logic                     := 'X';             -- hps_io_i2c0_inst_SCL
 			peripheral_hps_io_gpio_inst_GPIO53  : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO53
 			price_export_export                 : out   std_logic_vector(15 downto 0);                    -- export
-			status_export_export                : in    std_logic                     := 'X'              -- export
+			status_export_export                : in    std_logic                     := 'X';             -- export
+			cycles_export_export                : in    std_logic_vector(31 downto 0) := (others => 'X')  -- export
 		);
 	end component hft_hps_system;
 
@@ -122,6 +123,7 @@
 			peripheral_hps_io_i2c0_inst_SCL     => CONNECTED_TO_peripheral_hps_io_i2c0_inst_SCL,     --                .hps_io_i2c0_inst_SCL
 			peripheral_hps_io_gpio_inst_GPIO53  => CONNECTED_TO_peripheral_hps_io_gpio_inst_GPIO53,  --                .hps_io_gpio_inst_GPIO53
 			price_export_export                 => CONNECTED_TO_price_export_export,                 --    price_export.export
-			status_export_export                => CONNECTED_TO_status_export_export                 --   status_export.export
+			status_export_export                => CONNECTED_TO_status_export_export,                --   status_export.export
+			cycles_export_export                => CONNECTED_TO_cycles_export_export                 --   cycles_export.export
 		);
 

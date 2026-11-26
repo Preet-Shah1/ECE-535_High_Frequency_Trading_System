@@ -33,6 +33,22 @@
          type = "String";
       }
    }
+   element cycles_pio
+   {
+      datum _sortIndex
+      {
+         value = "7";
+         type = "int";
+      }
+   }
+   element cycles_pio.s1
+   {
+      datum baseAddress
+      {
+         value = "64";
+         type = "String";
+      }
+   }
    element decision_pio
    {
       datum _sortIndex
@@ -125,6 +141,11 @@
    type="conduit"
    dir="end" />
  <interface
+   name="cycles_export"
+   internal="cycles_pio.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
    name="decision_export"
    internal="decision_pio.external_connection"
    type="conduit"
@@ -179,6 +200,20 @@
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="1" />
+ </module>
+ <module name="cycles_pio" kind="altera_avalon_pio" version="18.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="32" />
  </module>
  <module
    name="decision_pio"
@@ -804,6 +839,15 @@
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
+   kind="avalon"
+   version="18.1"
+   start="hps.h2f_lw_axi_master"
+   end="cycles_pio.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
    kind="clock"
    version="18.1"
    start="config_clk.out_clk"
@@ -823,6 +867,11 @@
    version="18.1"
    start="config_clk.out_clk"
    end="control_pio.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="config_clk.out_clk"
+   end="cycles_pio.clk" />
  <connection
    kind="clock"
    version="18.1"
@@ -848,6 +897,11 @@
    version="18.1"
    start="global_reset.out_reset"
    end="status_pio.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="global_reset.out_reset"
+   end="cycles_pio.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="FIFO" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="0" />
 </system>
